@@ -22,7 +22,7 @@ class CompaniesControllerTest < ApplicationSystemTestCase
     assert_text @company.name
     assert_text @company.phone
     assert_text @company.email
-    assert_text "City, State"
+    assert_text "#{@company.city}, #{@company.state}"
   end
 
   test "Update" do
