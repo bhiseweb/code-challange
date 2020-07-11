@@ -30,7 +30,16 @@ class CompaniesController < ApplicationController
     else
       render :edit
     end
-  end  
+  end
+
+  def destroy
+    if @company.destroy
+      flash.notice = 'Company destroyed!!!'
+    else
+      set_alert
+    end
+    redirect_to companies_path
+  end
 
   private
 
@@ -42,12 +51,15 @@ class CompaniesController < ApplicationController
       :zip_code,
       :phone,
       :email,
-      :owner_id,
+      :owner_id
     )
   end
 
   def set_company
     @company = Company.find(params[:id])
   end
-  
+
+  def set_alert
+    flash.alert = @company.errors.full_messages.join(', ')
+  end
 end
