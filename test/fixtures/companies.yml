@@ -33,3 +33,11 @@ brown_painting:
   email: "brown_painting@brown_painting.com"
   zip_code:
   phone: "555-808-8888"
+
+valid_painting:
+  name: "Valid Painting"
+  email: "valid_painting@getmainstreet.com"
+  zip_code: "94203"
+  phone: "555-808-8888"
+  city: "Sacramento"
+  state: "California"
